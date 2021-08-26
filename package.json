@@ -26,6 +26,8 @@
     "@angular/router": "~9.1.0",
     "@nativescript/angular": "~9.0.0",
     "@nativescript/theme": "~2.3.0",
+    "font-awesome": "^4.7.0",
+    "nativescript-ngx-fonticon": "^6.0.3",
     "nativescript-ui-sidedrawer": "^5.1.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.5.0",

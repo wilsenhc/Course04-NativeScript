@@ -3,6 +3,7 @@ import { NativeScriptModule } from '@nativescript/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeScriptHttpClientModule } from '@nativescript/angular/http-client';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +36,9 @@ import { baseURL } from './shared/baseurl';
         NativeScriptHttpClientModule,
         HttpClientModule,
         NativeScriptUISideDrawerModule,
+        TNSFontIconModule.forRoot({
+            'fa': require('./fonts/font-awesome.min.css')
+        }),
     ],
     declarations: [
         AppComponent,
@@ -52,7 +56,7 @@ import { baseURL } from './shared/baseurl';
         LeaderService,
     ],
     schemas: [
-        NO_ERRORS_SCHEMA
+        NO_ERRORS_SCHEMA,
     ]
 })
 /*
