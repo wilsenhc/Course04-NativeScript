@@ -14,12 +14,12 @@ export class FavoriteService {
     }
 
     isFavorite(id: string): boolean {
-        return this.favorites.some(el => el === id);
+        return this.favorites.some(el => el == id);
     }
 
     addFavorite(id: string): boolean {
         if (!this.isFavorite(id)) {
-            this.favorites.push(id);
+            this.favorites.push(id.toString());
         }
         return true;
     }
@@ -30,7 +30,9 @@ export class FavoriteService {
     }
 
     deleteFavorite(id: string): Observable<Dish[]> {
-        let index = this.favorites.indexOf(id);
+        console.log(id);
+        console.log(this.favorites);
+        let index = this.favorites.indexOf(id.toString());
         if (index >= 0) {
             this.favorites.splice(index, 1);
             return this.getFavorites();

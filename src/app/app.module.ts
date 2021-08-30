@@ -1,8 +1,9 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { NativeScriptModule } from '@nativescript/angular';
 import { HttpClientModule } from '@angular/common/http';
-import { NativeScriptHttpClientModule } from '@nativescript/angular/http-client';
+import { NativeScriptModule } from '@nativescript/angular';
+import { NativeScriptHttpClientModule } from '@nativescript/angular';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { DishService } from './services/dish.service';
@@ -32,10 +34,11 @@ import { baseURL } from './shared/baseurl';
         AppComponent
     ],
     imports: [
-        NativeScriptModule,
         AppRoutingModule,
-        NativeScriptHttpClientModule,
         HttpClientModule,
+        NativeScriptModule,
+        NativeScriptHttpClientModule,
+        NativeScriptUIListViewModule,
         NativeScriptUISideDrawerModule,
         TNSFontIconModule.forRoot({
             'fa': require('./fonts/font-awesome.min.css')
@@ -48,6 +51,7 @@ import { baseURL } from './shared/baseurl';
         DishdetailComponent,
         ContactComponent,
         AboutComponent,
+        FavoritesComponent,
     ],
     providers: [
         { provide: 'baseURL', useValue: baseURL },
